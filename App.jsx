@@ -743,9 +743,9 @@ export default function SpeakingVocabQuizGame() {
   id: 93,
   type: "word",
   prompt: "Jak powiedzieć po angielsku: 'parkur'?",
-  options: ["course", "track", "arena", "route"],
+  options: ["parkour", "track", "arena", "route"],
   correctIndex: 0,
-  explanation: "'Course' oznacza 'parkur'.",
+  explanation: "'Parkour' oznacza 'parkur'.",
 },
 {
   id: 94,
