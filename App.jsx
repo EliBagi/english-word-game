@@ -1562,7 +1562,7 @@ export default function SpeakingVocabQuizGame() {
   type: "word",
   prompt: "Jak powiedzieć po angielsku: 'półsiad'?",
   options: ["half-seat", "chair seat", "bare back", "deep seat"],
-  correctIndex: 1,
+  correctIndex: 0,
   explanation: "'Half-seat' lub 'two-point position' oznacza 'półsiad'.",
 },
 {
