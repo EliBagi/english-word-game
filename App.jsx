@@ -567,7 +567,7 @@ export default function SpeakingVocabQuizGame() {
                 const showCorrect = selectedIndex !== null && isCorrect;
                 const showWrong = selectedIndex !== null && isSelected && !isCorrect;
 
-                let classes = "w-full rounded-2xl border px-5 py-4 text-left text-base font-medium transition-all md:text-lg ";
+                let classes = "w-full rounded-2xl border px-5 py-4 text-left text-lg font-medium leading-relaxed transition-all md:text-xl ";
                 if (showCorrect) {
                   classes += "border-emerald-500 bg-emerald-50 text-emerald-900";
                 } else if (showWrong) {
@@ -598,7 +598,7 @@ export default function SpeakingVocabQuizGame() {
               </div>
             )}
 
-            <div className="mt-8 flex justify-center">
+            <div className="mt-14 flex justify-center">
               <button
                 onClick={handleNextRandomSet}
                 className="rounded-2xl border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-900 transition hover:bg-slate-50"
@@ -652,7 +652,7 @@ export default function SpeakingVocabQuizGame() {
           </div>
         )}
 
-        <div className="mt-10 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div className="mt-16 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
           <button
             onClick={() => setShowHelp((prev) => !prev)}
             className="w-full rounded-2xl border border-slate-300 px-5 py-3 text-left font-semibold text-slate-900 transition hover:bg-slate-50"
