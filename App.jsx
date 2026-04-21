@@ -803,6 +803,656 @@ export default function SpeakingVocabQuizGame() {
   correctIndex: 0,
   explanation: "'Landing' oznacza 'lądowanie'.",
 },
+      {
+  id: 101,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Pracujemy dziś nad przejściami w górę.'",
+  options: [
+    "We are working on upward transitions today.",
+    "We work today on going up changes.",
+    "Today we training upper movements.",
+    "We do transitions to top today."
+  ],
+  correctIndex: 0,
+  explanation: "Najbardziej naturalne zdanie to: 'We are working on upward transitions today.'",
+},
+{
+  id: 102,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Zrób przejście stęp–kłus.'",
+  options: [
+    "Do a walk to trot transition.",
+    "Make a step and trot moving.",
+    "Go from walk in trot nowing.",
+    "Take the horse from step to running."
+  ],
+  correctIndex: 0,
+  explanation: "Poprawna forma to: 'Do a walk to trot transition.'",
+},
+{
+  id: 103,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Zrób przejście kłus–galop.'",
+  options: [
+    "Do a trot to canter transition.",
+    "Make trot and gallop change.",
+    "Go from trot into race gallop.",
+    "Take the horse to canter from trotting line."
+  ],
+  correctIndex: 0,
+  explanation: "To naturalne polecenie treningowe.",
+},
+{
+  id: 104,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Teraz zrób przejście galop–kłus.'",
+  options: [
+    "Now do a canter to trot transition.",
+    "Make now canter and trot changing.",
+    "Go canter back in trot now.",
+    "Take down the horse from gallop to kłus."
+  ],
+  correctIndex: 0,
+  explanation: "Poprawne zdanie to: 'Now do a canter to trot transition.'",
+},
+{
+  id: 105,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Zatrzymaj się i rusz ze stój.'",
+  options: [
+    "Halt and move off from halt.",
+    "Stop and go from standing horse.",
+    "Make halt and start from no move.",
+    "Stay and then ride from stop line."
+  ],
+  correctIndex: 0,
+  explanation: "To poprawna forma dla 'zatrzymaj się i rusz ze stój'.",
+},
+{
+  id: 106,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Utrzymaj rytm w kłusie.'",
+  options: [
+    "Keep the rhythm in trot.",
+    "Hold the music in trot.",
+    "Stay with beat during horse run.",
+    "Maintain the tempo of step two."
+  ],
+  correctIndex: 0,
+  explanation: "Najbardziej naturalne zdanie to: 'Keep the rhythm in trot.'",
+},
+{
+  id: 107,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Koń powinien pracować na kontakcie.'",
+  options: [
+    "The horse should work into the contact.",
+    "The horse should go to the hand contactly.",
+    "The horse must work in touching.",
+    "The horse should do the bit line."
+  ],
+  correctIndex: 0,
+  explanation: "Tak naturalnie mówi się o pracy na kontakcie.",
+},
+{
+  id: 108,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Popraw prostowanie na długiej ścianie.'",
+  options: [
+    "Improve the straightness on the long side.",
+    "Make horse more straight on big wall.",
+    "Correct the horse line on long track side wall.",
+    "Put the horse in straight on the long place."
+  ],
+  correctIndex: 0,
+  explanation: "Najbardziej naturalne zdanie treningowe to: 'Improve the straightness on the long side.'",
+},
+{
+  id: 109,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Pracujemy dziś nad zebraniem.'",
+  options: [
+    "We are working on collection today.",
+    "We train gathered horse today.",
+    "Today we make the horse collected thing.",
+    "We are doing horse closing today."
+  ],
+  correctIndex: 0,
+  explanation: "Poprawna forma to: 'We are working on collection today.'",
+},
+{
+  id: 110,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Rozluźnienie jest dziś najważniejsze.'",
+  options: [
+    "Relaxation is the most important thing today.",
+    "Relaxing is biggest for today now.",
+    "Today the horse must be most loosened.",
+    "Relax is number one in this training now."
+  ],
+  correctIndex: 0,
+  explanation: "To naturalna i poprawna forma.",
+},
+{
+  id: 111,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Zrób koło na środku ujeżdżalni.'",
+  options: [
+    "Ride a circle in the middle of the arena.",
+    "Make a round in middle place.",
+    "Go one wheel in center.",
+    "Ride around in the central point."
+  ],
+  correctIndex: 0,
+  explanation: "Najbardziej naturalne polecenie to: 'Ride a circle in the middle of the arena.'",
+},
+{
+  id: 112,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Jedź po pół kole.'",
+  options: [
+    "Ride a half circle.",
+    "Go on half wheel.",
+    "Make half round ride.",
+    "Ride the middle circle cut."
+  ],
+  correctIndex: 0,
+  explanation: "Poprawna forma to: 'Ride a half circle.'",
+},
+{
+  id: 113,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Zrób serpentynę w kłusie.'",
+  options: [
+    "Do a serpentine in trot.",
+    "Make snake line in horse trot.",
+    "Ride curve exercise in running step.",
+    "Take a serpentine line with kłus."
+  ],
+  correctIndex: 0,
+  explanation: "To poprawne i naturalne polecenie.",
+},
+{
+  id: 114,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Przejedź po przekątnej.'",
+  options: [
+    "Ride across the diagonal.",
+    "Go by the cross line.",
+    "Take the slant route in arena.",
+    "Ride on the diagonal way side."
+  ],
+  correctIndex: 0,
+  explanation: "Najnaturalniej: 'Ride across the diagonal.'",
+},
+{
+  id: 115,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Wjedź na linię środkową.'",
+  options: [
+    "Ride onto the center line.",
+    "Go to the middle horse line.",
+    "Enter the central ride track.",
+    "Take the horse on line in middle."
+  ],
+  correctIndex: 0,
+  explanation: "To standardowe polecenie ujeżdżeniowe.",
+},
+{
+  id: 116,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Zmień kierunek przy literze C.'",
+  options: [
+    "Change direction at C.",
+    "Turn the horse on C letter side.",
+    "Make another way near C point.",
+    "Do direction switch by the C."
+  ],
+  correctIndex: 0,
+  explanation: "Poprawna forma to: 'Change direction at C.'",
+},
+{
+  id: 117,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Koń zrobił zmianę nogi w galopie.'",
+  options: [
+    "The horse did a flying change.",
+    "The horse changed leg in fast canter line.",
+    "The horse made a canter foot switch.",
+    "The horse did changing in gallop leg."
+  ],
+  correctIndex: 0,
+  explanation: "W ujeżdżeniu mówi się: 'The horse did a flying change.'",
+},
+{
+  id: 118,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Ćwiczymy ustępowanie od łydki.'",
+  options: [
+    "We are practicing leg yield.",
+    "We train giving from leg.",
+    "We are doing side move from calf.",
+    "We practice horse moving away leg."
+  ],
+  correctIndex: 0,
+  explanation: "Najbardziej naturalna forma to: 'We are practicing leg yield.'",
+},
+{
+  id: 119,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Zrób łopatkę do wewnątrz.'",
+  options: [
+    "Do shoulder-in.",
+    "Make shoulder to inside now.",
+    "Put the shoulder in the horse.",
+    "Turn shoulder to center."
+  ],
+  correctIndex: 0,
+  explanation: "To standardowe polecenie: 'Do shoulder-in.'",
+},
+{
+  id: 120,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Teraz pojedź trawersem.'",
+  options: [
+    "Now ride travers.",
+    "Go now in side cross bend.",
+    "Ride horse in traversing movement.",
+    "Make back side movement now."
+  ],
+  correctIndex: 0,
+  explanation: "Najprościej i poprawnie: 'Now ride travers.'",
+},
+{
+  id: 121,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Zrób ciąg w lewo.'",
+  options: [
+    "Do a half pass to the left.",
+    "Make side crossing left horse movement.",
+    "Take the horse left in pass halfing.",
+    "Do a leg pass deep to left."
+  ],
+  correctIndex: 0,
+  explanation: "To poprawne polecenie dla 'ciągu w lewo'.",
+},
+{
+  id: 122,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Dziś ćwiczymy skoki przez przeszkody.'",
+  options: [
+    "We are practicing show jumping today.",
+    "Today we train horse jumping over things.",
+    "We do obstacle horse work in this day.",
+    "Now we are in jump riding obstacles."
+  ],
+  correctIndex: 0,
+  explanation: "Najbardziej naturalna forma to: 'We are practicing show jumping today.'",
+},
+{
+  id: 123,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Zapamiętaj parkur.'",
+  options: [
+    "Memorize the course.",
+    "Remember the jumping road.",
+    "Keep the parkour in minding.",
+    "Learn the horse route of jumps."
+  ],
+  correctIndex: 0,
+  explanation: "W skokach 'course' oznacza parkur.",
+},
+{
+  id: 124,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'To jest wysoka przeszkoda.'",
+  options: [
+    "This is a high jump.",
+    "This is a tall obstacle horse.",
+    "Here is one high fence thing.",
+    "This jumping thing is high there."
+  ],
+  correctIndex: 0,
+  explanation: "Najbardziej naturalnie: 'This is a high jump.'",
+},
+{
+  id: 125,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Połóż drągi na ziemi.'",
+  options: [
+    "Put the poles on the ground.",
+    "Lay the bars in floor.",
+    "Take poles down to earth now.",
+    "Put the sticks for horse below."
+  ],
+  correctIndex: 0,
+  explanation: "To poprawne i naturalne polecenie.",
+},
+{
+  id: 126,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'To jest stacjonata.'",
+  options: [
+    "This is a vertical.",
+    "This is a straight jumping fence.",
+    "It is one upright horse jump line.",
+    "That is station jump."
+  ],
+  correctIndex: 0,
+  explanation: "W skokach 'vertical' oznacza stacjonatę.",
+},
+{
+  id: 127,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Następna przeszkoda to okser.'",
+  options: [
+    "The next jump is an oxer.",
+    "The next obstacle is wide vertical horse.",
+    "The next fence comes as ox jump line.",
+    "After this there is one oxer type thing."
+  ],
+  correctIndex: 0,
+  explanation: "To naturalne określenie kolejnej przeszkody.",
+},
+{
+  id: 128,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Najazd był za szybki.'",
+  options: [
+    "The approach was too fast.",
+    "The horse came in speed too much on line.",
+    "The going to jump was over quick.",
+    "Approach to obstacle had too many speed."
+  ],
+  correctIndex: 0,
+  explanation: "Najbardziej naturalnie: 'The approach was too fast.'",
+},
+{
+  id: 129,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Odbicie było spóźnione.'",
+  options: [
+    "The take-off was late.",
+    "The jump start came too after.",
+    "The horse pushed from ground lately.",
+    "Take from jump was delayed in air."
+  ],
+  correctIndex: 0,
+  explanation: "To poprawna forma dla 'spóźnionego odbicia'.",
+},
+{
+  id: 130,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Lądowanie było nierówne.'",
+  options: [
+    "The landing was uneven.",
+    "The horse came down not equal.",
+    "Landing after jump was not same right.",
+    "The ground finish was unbalanced landingly."
+  ],
+  correctIndex: 0,
+  explanation: "Najbardziej naturalne zdanie to: 'The landing was uneven.'",
+},
+{
+  id: 131,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Koń miał odmowę na pierwszej przeszkodzie.'",
+  options: [
+    "The horse had a refusal at the first jump.",
+    "The horse said no on first obstacle.",
+    "At the first fence the horse did not go there.",
+    "Horse made a stop on number one jump thing."
+  ],
+  correctIndex: 0,
+  explanation: "W skokach używa się słowa 'refusal'.",
+},
+{
+  id: 132,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Koń zrobił wyłamanie.'",
+  options: [
+    "The horse had a run-out.",
+    "The horse went outside jumping thing.",
+    "The horse escaped from line fence.",
+    "The horse made side refusal out."
+  ],
+  correctIndex: 0,
+  explanation: "Poprawna forma to: 'The horse had a run-out.'",
+},
+{
+  id: 133,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Była zrzutka na okserze.'",
+  options: [
+    "There was a rail down at the oxer.",
+    "The oxer had one bar falling thing.",
+    "A pole went off on oxer jump line.",
+    "There was down rail in the wide fence."
+  ],
+  correctIndex: 0,
+  explanation: "To naturalna forma opisu błędu na przeszkodzie.",
+},
+{
+  id: 134,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Koń odbił się za daleko.'",
+  options: [
+    "The horse had a long take-off.",
+    "The horse jumped from too much distance far.",
+    "The take from ground was very longly.",
+    "Horse pushed far away before obstacle."
+  ],
+  correctIndex: 0,
+  explanation: "Poprawna forma to: 'The horse had a long take-off.'",
+},
+{
+  id: 135,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Koń był za blisko przeszkody.'",
+  options: [
+    "The horse was too deep to the jump.",
+    "The horse came much too near obstacle line.",
+    "Horse was too close in front of jump thing.",
+    "The horse entered deep at fence place too much."
+  ],
+  correctIndex: 0,
+  explanation: "W skokach mówi się: 'too deep to the jump'.",
+},
+{
+  id: 136,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Jedź do przodu.'",
+  options: [
+    "Go forward.",
+    "Ride to front.",
+    "Go in front way now.",
+    "Take horse more aheadly."
+  ],
+  correctIndex: 0,
+  explanation: "To poprawny i naturalny zwrot używany na parkurze.",
+},
+{
+  id: 137,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Utrzymaj rytm.'",
+  options: [
+    "Keep the rhythm.",
+    "Hold the beat line.",
+    "Stay in horse music.",
+    "Maintain the movement song."
+  ],
+  correctIndex: 0,
+  explanation: "To standardowy zwrot treningowy.",
+},
+{
+  id: 138,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Zrób półparadę.'",
+  options: [
+    "Make a half halt.",
+    "Do a little stop now.",
+    "Take half pause in riding.",
+    "Make a soft stopping aid half."
+  ],
+  correctIndex: 0,
+  explanation: "Poprawne polecenie to: 'Make a half halt.'",
+},
+{
+  id: 139,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Utrzymaj kontakt.'",
+  options: [
+    "Maintain contact.",
+    "Keep touching the horse mouth.",
+    "Hold the hand line connection now.",
+    "Stay with rein link all time."
+  ],
+  correctIndex: 0,
+  explanation: "To właściwy zwrot z dokumentu.",
+},
+{
+  id: 140,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Użyj wewnętrznej łydki.'",
+  options: [
+    "Use your inside leg.",
+    "Take your inner calf now.",
+    "Ride from inner leg part there.",
+    "Put more leg from in side."
+  ],
+  correctIndex: 0,
+  explanation: "To poprawne i naturalne polecenie.",
+},
+{
+  id: 141,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Wyprostuj konia.'",
+  options: [
+    "Straighten the horse.",
+    "Make the horse more straightly.",
+    "Put the horse in direct line now.",
+    "Correct horse to front shape."
+  ],
+  correctIndex: 0,
+  explanation: "Najbardziej naturalnie: 'Straighten the horse.'",
+},
+{
+  id: 142,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Patrz na następną przeszkodę.'",
+  options: [
+    "Look at the next jump.",
+    "See the coming obstacle there.",
+    "Watch on next fence now.",
+    "Keep eye to another jump thing."
+  ],
+  correctIndex: 0,
+  explanation: "To poprawny zwrot używany na parkurze.",
+},
+{
+  id: 143,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Nie przyspieszaj przed przeszkodą.'",
+  options: [
+    "Don’t rush before the jump.",
+    "Do not go more quick in front obstacle.",
+    "Not speed before fence line.",
+    "Do not faster the horse near jump."
+  ],
+  correctIndex: 0,
+  explanation: "To naturalne polecenie z dokumentu.",
+},
+{
+  id: 144,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Daj koniowi miejsce.'",
+  options: [
+    "Give the horse space.",
+    "Make room to horse now.",
+    "Leave horse more free rooming.",
+    "Put more place for horse there."
+  ],
+  correctIndex: 0,
+  explanation: "To poprawna i naturalna forma.",
+},
+{
+  id: 145,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Utrzymaj linię.'",
+  options: [
+    "Keep the line.",
+    "Stay on one horse way.",
+    "Hold the route directness.",
+    "Maintain the straight road thing."
+  ],
+  correctIndex: 0,
+  explanation: "To krótki, poprawny zwrot treningowy.",
+},
+{
+  id: 146,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Koń ma dobre aktywne tylne nogi.'",
+  options: [
+    "The horse has good active hind legs.",
+    "The horse is active in the back foots.",
+    "The horse goes strong on rear legsly.",
+    "Horse has nice activity in the hind parts legs."
+  ],
+  correctIndex: 0,
+  explanation: "Najbardziej naturalna forma to: 'The horse has good active hind legs.'",
+},
+{
+  id: 147,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'To był dobry working trot.'",
+  options: [
+    "That was a good working trot.",
+    "It was one nice trot of working.",
+    "That trot was worker and good.",
+    "This was a well trot in work kind."
+  ],
+  correctIndex: 0,
+  explanation: "To poprawna forma z użyciem nazwy chodu.",
+},
+{
+  id: 148,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Pokaż medium trot na przekątnej.'",
+  options: [
+    "Show a medium trot on the diagonal.",
+    "Make medium trot in the cross line now.",
+    "Ride medium on diagonal horse line.",
+    "Show middle trot across arena line."
+  ],
+  correctIndex: 0,
+  explanation: "To naturalne polecenie ujeżdżeniowe.",
+},
+{
+  id: 149,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Na końcu daj koniowi free walk.'",
+  options: [
+    "At the end, give the horse a free walk.",
+    "In finish make horse free in step.",
+    "Last do one open walk for horse.",
+    "At the final let horse walk free style."
+  ],
+  correctIndex: 0,
+  explanation: "To poprawne zdanie z nazwą chodu.",
+},
+{
+  id: 150,
+  type: "sentence",
+  prompt: "Wybierz najlepsze zdanie: 'Dziś pracujemy nad rytmem, kontaktem i prostowaniem.'",
+  options: [
+    "Today we are working on rhythm, contact, and straightness.",
+    "Today we train rhythm, touching and horse straighting.",
+    "We are doing beat, contact and direct horse today.",
+    "Today horse work is about rhythm and making straight line contact."
+  ],
+  correctIndex: 0,
+  explanation: "To najbardziej naturalna forma podsumowująca trening.",
+},
     ],
     []
   );
