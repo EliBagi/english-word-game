@@ -523,48 +523,38 @@ export default function SpeakingVocabQuizGame() {
     <div className="min-h-screen bg-slate-100 px-4 py-8 md:px-8">
       <div className="mx-auto max-w-4xl">
         <div className="mb-6 rounded-3xl bg-gradient-to-r from-slate-900 to-slate-700 p-8 text-white shadow-xl">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <h1 className="text-3xl font-bold tracking-tight md:text-5xl">English Vocabulary Quiz Game</h1>
-              <p className="mt-3 max-w-2xl text-sm text-slate-200 md:text-base">
-                Gra do nauki słownictwa: wybierz poprawne słowo lub zdanie spośród 4 opcji.
-              </p>
-            </div>
-            <div className="grid grid-cols-3 gap-3 md:min-w-[320px]">
-              <div className="rounded-2xl bg-white/10 p-4 text-center backdrop-blur">
-                <p className="text-xs uppercase tracking-wide text-slate-200">Question</p>
-                <p className="mt-1 text-xl font-bold">{currentIndex + 1}/{totalQuestions}</p>
-              </div>
-              <div className="rounded-2xl bg-white/10 p-4 text-center backdrop-blur">
-                <p className="text-xs uppercase tracking-wide text-slate-200">Type</p>
-                <p className="mt-1 text-sm font-semibold">{currentQuestion.type === "word" ? "Word" : "Sentence"}</p>
-              </div>
-              <div className="rounded-2xl bg-white/10 p-4 text-center backdrop-blur">
-                <p className="text-xs uppercase tracking-wide text-slate-200">Score</p>
-                <p className="mt-1 text-xl font-bold">{score}</p>
-              </div>
-            </div>
+          <div className="text-center">
+            <h1 className="text-3xl font-bold tracking-tight md:text-5xl">English Vocabulary Quiz Game</h1>
+            <p className="mt-4 text-sm text-slate-200 md:text-base">
+              Gra do nauki słownictwa: wybierz poprawne słowo lub zdanie spośród 4 opcji.
+            </p>
           </div>
         </div>
 
         {!finished ? (
           <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg md:p-8">
+            <div className="mb-8 mt-2 flex justify-center">
+              <div className="grid w-full max-w-md gap-3">
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-center">
+                  <p className="text-xs uppercase tracking-wide text-slate-500">Question</p>
+                  <p className="mt-1 text-2xl font-bold text-slate-900">{currentIndex + 1}/{totalQuestions}</p>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-center">
+                  <p className="text-xs uppercase tracking-wide text-slate-500">Type</p>
+                  <p className="mt-1 text-2xl font-bold text-slate-900">{currentQuestion.type === "word" ? "Word" : "Sentence"}</p>
+                </div>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-center">
+                  <p className="text-xs uppercase tracking-wide text-slate-500">Score</p>
+                  <p className="mt-1 text-2xl font-bold text-slate-900">{score}</p>
+                </div>
+              </div>
+            </div>
+
             <div className="mb-6 h-3 w-full overflow-hidden rounded-full bg-slate-100">
               <div className="h-full rounded-full bg-slate-900 transition-all" style={{ width: `${(currentIndex / totalQuestions) * 100}%` }} />
             </div>
 
             <div className="mb-8 text-center">
-              <div className="mb-5 flex flex-wrap items-center justify-center gap-3">
-                <span className="inline-flex rounded-full bg-slate-100 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-slate-700">
-                  {currentQuestion.type === "word" ? "Word choice" : "Sentence choice"}
-                </span>
-                <button
-                  onClick={handleNextRandomSet}
-                  className="rounded-2xl border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
-                >
-                  New Random Round
-                </button>
-              </div>
               <h2 className="mt-5 text-2xl font-bold leading-relaxed text-slate-900 md:text-4xl">
                 {currentQuestion.prompt}
               </h2>
@@ -607,6 +597,15 @@ export default function SpeakingVocabQuizGame() {
                 </div>
               </div>
             )}
+
+            <div className="mt-8 flex justify-center">
+              <button
+                onClick={handleNextRandomSet}
+                className="rounded-2xl border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-900 transition hover:bg-slate-50"
+              >
+                New Random Round
+              </button>
+            </div>
           </div>
         ) : (
           <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg md:p-8">
@@ -653,7 +652,7 @@ export default function SpeakingVocabQuizGame() {
           </div>
         )}
 
-        <div className="mt-6 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div className="mt-10 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
           <button
             onClick={() => setShowHelp((prev) => !prev)}
             className="w-full rounded-2xl border border-slate-300 px-5 py-3 text-left font-semibold text-slate-900 transition hover:bg-slate-50"
