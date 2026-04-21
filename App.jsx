@@ -443,6 +443,7 @@ export default function SpeakingVocabQuizGame() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [showResult, setShowResult] = useState(false);
+  const [showHelp, setShowHelp] = useState(false);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
   const [answers, setAnswers] = useState([]);
@@ -503,8 +504,8 @@ export default function SpeakingVocabQuizGame() {
 
   if (totalQuestions === 0 || !currentQuestion) {
     return (
-      <div className="min-h-screen bg-slate-50 p-6 md:p-10">
-        <div className="mx-auto max-w-3xl rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div className="min-h-screen bg-slate-100 px-4 py-10 md:px-8">
+        <div className="mx-auto max-w-3xl rounded-3xl border border-slate-200 bg-white p-6 shadow-lg">
           <h1 className="text-2xl font-bold text-slate-900">English Vocabulary Quiz Game</h1>
           <p className="mt-3 text-slate-700">No questions are available right now.</p>
           <button
@@ -519,42 +520,56 @@ export default function SpeakingVocabQuizGame() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 p-6 md:p-10">
+    <div className="min-h-screen bg-slate-100 px-4 py-8 md:px-8">
       <div className="mx-auto max-w-4xl">
-        <div className="mb-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h1 className="text-3xl font-bold tracking-tight text-slate-900">English Vocabulary Quiz Game</h1>
-          <p className="mt-2 text-slate-600">Gra do nauki słownictwa: wybierz poprawne słowo lub zdanie spośród 4 opcji.</p>
+        <div className="mb-6 rounded-3xl bg-gradient-to-r from-slate-900 to-slate-700 p-8 text-white shadow-xl">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h1 className="text-3xl font-bold tracking-tight md:text-5xl">English Vocabulary Quiz Game</h1>
+              <p className="mt-3 max-w-2xl text-sm text-slate-200 md:text-base">
+                Gra do nauki słownictwa: wybierz poprawne słowo lub zdanie spośród 4 opcji.
+              </p>
+            </div>
+            <div className="grid grid-cols-3 gap-3 md:min-w-[320px]">
+              <div className="rounded-2xl bg-white/10 p-4 text-center backdrop-blur">
+                <p className="text-xs uppercase tracking-wide text-slate-200">Question</p>
+                <p className="mt-1 text-xl font-bold">{currentIndex + 1}/{totalQuestions}</p>
+              </div>
+              <div className="rounded-2xl bg-white/10 p-4 text-center backdrop-blur">
+                <p className="text-xs uppercase tracking-wide text-slate-200">Type</p>
+                <p className="mt-1 text-sm font-semibold">{currentQuestion.type === "word" ? "Word" : "Sentence"}</p>
+              </div>
+              <div className="rounded-2xl bg-white/10 p-4 text-center backdrop-blur">
+                <p className="text-xs uppercase tracking-wide text-slate-200">Score</p>
+                <p className="mt-1 text-xl font-bold">{score}</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {!finished ? (
-          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-            <div className="mb-5 flex items-center justify-between gap-4">
-              <div>
-                <p className="text-sm font-medium text-slate-500">Pytanie {currentIndex + 1} z {totalQuestions}</p>
-                <p className="mt-1 inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-700">
-                  {currentQuestion.type === "word" ? "word choice" : "sentence choice"}
-                </p>
-              </div>
-              <div className="text-right">
-                <p className="text-sm text-slate-500">Wynik</p>
-                <p className="text-2xl font-bold text-slate-900">{score}</p>
-              </div>
-            </div>
-
+          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg md:p-8">
             <div className="mb-6 h-3 w-full overflow-hidden rounded-full bg-slate-100">
               <div className="h-full rounded-full bg-slate-900 transition-all" style={{ width: `${(currentIndex / totalQuestions) * 100}%` }} />
             </div>
 
-            <h2 className="text-xl font-semibold leading-relaxed text-slate-900">{currentQuestion.prompt}</h2>
+            <div className="mb-8 text-center">
+              <span className="inline-flex rounded-full bg-slate-100 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-slate-700">
+                {currentQuestion.type === "word" ? "Word choice" : "Sentence choice"}
+              </span>
+              <h2 className="mt-5 text-2xl font-bold leading-relaxed text-slate-900 md:text-4xl">
+                {currentQuestion.prompt}
+              </h2>
+            </div>
 
-            <div className="mt-6 grid gap-3">
+            <div className="grid gap-3">
               {currentQuestion.options.map((option, index) => {
                 const isSelected = selectedIndex === index;
                 const isCorrect = currentQuestion.correctIndex === index;
                 const showCorrect = selectedIndex !== null && isCorrect;
                 const showWrong = selectedIndex !== null && isSelected && !isCorrect;
 
-                let classes = "w-full rounded-2xl border px-4 py-4 text-left text-base transition-all ";
+                let classes = "w-full rounded-2xl border px-5 py-4 text-left text-base font-medium transition-all md:text-lg ";
                 if (showCorrect) {
                   classes += "border-emerald-500 bg-emerald-50 text-emerald-900";
                 } else if (showWrong) {
@@ -565,15 +580,20 @@ export default function SpeakingVocabQuizGame() {
 
                 return (
                   <button key={`${currentQuestion.id}-${index}`} onClick={() => handleOptionClick(index)} className={classes}>
-                    <span className="font-medium">{String.fromCharCode(65 + index)}.</span> {option}
+                    <span className="mr-2 inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-sm font-bold text-slate-700">
+                      {String.fromCharCode(65 + index)}
+                    </span>
+                    {option}
                   </button>
                 );
               })}
             </div>
 
             {selectedIndex !== null && (
-              <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                <p className="font-semibold text-slate-900">{selectedIndex === currentQuestion.correctIndex ? "Correct" : "Not this time"}</p>
+              <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                <p className="text-lg font-semibold text-slate-900">
+                  {selectedIndex === currentQuestion.correctIndex ? "Correct" : "Not this time"}
+                </p>
                 <p className="mt-2 text-slate-700">{currentQuestion.explanation}</p>
                 <div className="mt-4 flex flex-wrap gap-3">
                   <button onClick={handleNext} className="rounded-2xl bg-slate-900 px-5 py-3 font-medium text-white transition hover:opacity-90">
@@ -584,8 +604,8 @@ export default function SpeakingVocabQuizGame() {
             )}
           </div>
         ) : (
-          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h2 className="text-2xl font-bold text-slate-900">Quiz finished</h2>
+          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg md:p-8">
+            <h2 className="text-3xl font-bold text-slate-900">Quiz finished</h2>
             <p className="mt-3 text-lg text-slate-700">
               Your score: <span className="font-bold">{score}/{totalQuestions}</span>
             </p>
@@ -628,19 +648,30 @@ export default function SpeakingVocabQuizGame() {
           </div>
         )}
 
-        <div className="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h3 className="text-xl font-semibold text-slate-900">How to edit the quiz</h3>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-700">
-            <li>Each question is stored in the <span className="font-mono">questions</span> array near the top of the file.</li>
-            <li>The full database currently contains 50 unique questions.</li>
-            <li>Each round uses only 20 randomly selected questions from the full database.</li>
-            <li>Every time the quiz starts, the questions are shuffled automatically.</li>
-            <li>The 4 answer options inside each question are also shuffled automatically.</li>
-            <li>The <span className="font-mono">Next random set</span> button creates a brand new random round.</li>
-            <li>To add a new question, copy one object and change the prompt, 4 options, correct answer index, and explanation.</li>
-            <li><span className="font-mono">correctIndex: 0</span> means the first answer in your source data is correct, <span className="font-mono">1</span> means the second, and so on.</li>
-            <li>Quick self-check: after adding questions, make sure each item has exactly 4 options and one valid correctIndex.</li>
-          </ul>
+        <div className="mt-6 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+          <button
+            onClick={() => setShowHelp((prev) => !prev)}
+            className="w-full rounded-2xl border border-slate-300 px-5 py-3 text-left font-semibold text-slate-900 transition hover:bg-slate-50"
+          >
+            {showHelp ? "Hide help and editing notes" : "Show help and editing notes"}
+          </button>
+
+          {showHelp && (
+            <div className="mt-4 rounded-2xl bg-slate-50 p-5 text-slate-700">
+              <h3 className="text-lg font-semibold text-slate-900">How to edit the quiz</h3>
+              <ul className="mt-3 list-disc space-y-2 pl-5">
+                <li>Each question is stored in the <span className="font-mono">questions</span> array near the top of the file.</li>
+                <li>The full database currently contains 50 unique questions.</li>
+                <li>Each round uses only 20 randomly selected questions from the full database.</li>
+                <li>Every time the quiz starts, the questions are shuffled automatically.</li>
+                <li>The 4 answer options inside each question are also shuffled automatically.</li>
+                <li>The <span className="font-mono">Next random set</span> button creates a brand new random round.</li>
+                <li>To add a new question, copy one object and change the prompt, 4 options, correct answer index, and explanation.</li>
+                <li><span className="font-mono">correctIndex: 0</span> means the first answer in your source data is correct, <span className="font-mono">1</span> means the second, and so on.</li>
+                <li>Quick self-check: after adding questions, make sure each item has exactly 4 options and one valid correctIndex.</li>
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </div>
