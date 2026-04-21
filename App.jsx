@@ -554,9 +554,17 @@ export default function SpeakingVocabQuizGame() {
             </div>
 
             <div className="mb-8 text-center">
-              <span className="inline-flex rounded-full bg-slate-100 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-slate-700">
-                {currentQuestion.type === "word" ? "Word choice" : "Sentence choice"}
-              </span>
+              <div className="mb-5 flex flex-wrap items-center justify-center gap-3">
+                <span className="inline-flex rounded-full bg-slate-100 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-slate-700">
+                  {currentQuestion.type === "word" ? "Word choice" : "Sentence choice"}
+                </span>
+                <button
+                  onClick={handleNextRandomSet}
+                  className="rounded-2xl border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+                >
+                  New Random Round
+                </button>
+              </div>
               <h2 className="mt-5 text-2xl font-bold leading-relaxed text-slate-900 md:text-4xl">
                 {currentQuestion.prompt}
               </h2>
@@ -580,9 +588,6 @@ export default function SpeakingVocabQuizGame() {
 
                 return (
                   <button key={`${currentQuestion.id}-${index}`} onClick={() => handleOptionClick(index)} className={classes}>
-                    <span className="mr-2 inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-sm font-bold text-slate-700">
-                      {String.fromCharCode(65 + index)}
-                    </span>
                     {option}
                   </button>
                 );
@@ -653,22 +658,17 @@ export default function SpeakingVocabQuizGame() {
             onClick={() => setShowHelp((prev) => !prev)}
             className="w-full rounded-2xl border border-slate-300 px-5 py-3 text-left font-semibold text-slate-900 transition hover:bg-slate-50"
           >
-            {showHelp ? "Hide help and editing notes" : "Show help and editing notes"}
+            {showHelp ? "Hide Help" : "Show Help"}
           </button>
 
           {showHelp && (
             <div className="mt-4 rounded-2xl bg-slate-50 p-5 text-slate-700">
-              <h3 className="text-lg font-semibold text-slate-900">How to edit the quiz</h3>
+              <h3 className="text-lg font-semibold text-slate-900">Help</h3>
               <ul className="mt-3 list-disc space-y-2 pl-5">
-                <li>Each question is stored in the <span className="font-mono">questions</span> array near the top of the file.</li>
-                <li>The full database currently contains 50 unique questions.</li>
                 <li>Each round uses only 20 randomly selected questions from the full database.</li>
                 <li>Every time the quiz starts, the questions are shuffled automatically.</li>
                 <li>The 4 answer options inside each question are also shuffled automatically.</li>
-                <li>The <span className="font-mono">Next random set</span> button creates a brand new random round.</li>
-                <li>To add a new question, copy one object and change the prompt, 4 options, correct answer index, and explanation.</li>
-                <li><span className="font-mono">correctIndex: 0</span> means the first answer in your source data is correct, <span className="font-mono">1</span> means the second, and so on.</li>
-                <li>Quick self-check: after adding questions, make sure each item has exactly 4 options and one valid correctIndex.</li>
+                <li>The New Random Round button creates a brand new random round.</li>
               </ul>
             </div>
           )}
