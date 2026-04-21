@@ -2211,10 +2211,10 @@ export default function SpeakingVocabQuizGame() {
   options: [
     "The horse is on the forehand.",
     "The horse is hanging in front side.",
-    "The horse goes heavy on front body.",
+    "The horse goes on the forehand.",
     "Horse is too much on the head and neck line."
   ],
-  correctIndex: 0,
+  correctIndex: 2,
   explanation: "To standardowe wyrażenie jeździeckie.",
 },
 {
